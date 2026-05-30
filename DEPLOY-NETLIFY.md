@@ -13,10 +13,12 @@ La skill del corso è inclusa in `web/knowledge/agenti-intelligenti-altair/` (no
 1. Push del progetto su GitHub (root = cartella `booktoskillagint`, con `netlify.toml` in root).
 2. Netlify → **Add new site** → **Import an existing project**.
 3. Connetti il repo; Netlify legge `netlify.toml` automaticamente:
-   - **Base directory:** `web` (già in `netlify.toml`)
+   - **Base directory:** `web`
    - **Build command:** `npm ci && npm run build`
-   - **Plugin:** `@netlify/plugin-nextjs`
-4. **Site settings → Environment variables** (Production):
+   - **Publish directory:** lascia **vuoto** oppure `.next` — **mai** `web` (altrimenti il build fallisce)
+4. Se il sito esiste già: **Site configuration → Build & deploy → Build settings** → cancella **Publish directory** se è `web` → **Save** → **Trigger deploy**.
+
+5. **Site settings → Environment variables** (Production):
 
    | Variabile | Obbligatoria | Esempio |
    |-----------|--------------|---------|
@@ -30,7 +32,7 @@ La skill del corso è inclusa in `web/knowledge/agenti-intelligenti-altair/` (no
 
    \* Senza ElevenLabs la chat funziona; manca solo «Leggi risposte».
 
-5. **Deploy site**.
+6. **Deploy site**.
 
 URL finale: `https://<nome-sito>.netlify.app` (HTTPS: microfono e audio su iPhone funzionano).
 
