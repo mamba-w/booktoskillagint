@@ -1,0 +1,7 @@
+.DS_Store
+web/.next/
+web/node_modules/
+web/.env*
+!web/.env.example
+web/certificates/
+*.pem

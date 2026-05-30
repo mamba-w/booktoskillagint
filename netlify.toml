@@ -1,0 +1,16 @@
+# Deploy da cartella web (Next.js App Router)
+[build]
+  base = "web"
+  command = "npm ci && npm run build"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+[build.environment]
+  NODE_VERSION = "20"
+  NPM_FLAGS = "--legacy-peer-deps"
+
+# Variabili da impostare in Netlify UI (Site settings → Environment):
+# OPENAI_API_KEY, OPENAI_MODEL (opzionale), ELEVENLABS_API_KEY,
+# ELEVENLABS_VOICE_ID, ELEVENLABS_MODEL_ID, ELEVENLABS_SPEED (opzionale)
+# SKILL_DIR non serve: la skill è in web/knowledge/agenti-intelligenti-altair/
